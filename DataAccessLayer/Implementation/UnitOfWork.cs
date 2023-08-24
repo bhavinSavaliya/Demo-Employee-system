@@ -6,10 +6,11 @@ namespace DataAccessLayer.Implementation
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
-        
+        public IEmployeeRepo EmployeeRepo { get; private set; }
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
+            EmployeeRepo = new EmployeeRepo(context);
             
         }
         public IBaseRepo<T> GetRepository<T>() where T : class

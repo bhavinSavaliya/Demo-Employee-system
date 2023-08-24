@@ -7,6 +7,6 @@
         IBaseRepo<T> GetRepository<T>() where T : class;
         Task SaveAsync();
         Task RollbackAsync();
-        
+        IEmployeeRepo EmployeeRepo { get; }
     }
 }

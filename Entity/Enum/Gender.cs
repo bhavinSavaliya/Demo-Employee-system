@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entity.Enum
+﻿namespace Entity.Enum
 {
     public enum Gender
     {
-        Male,
-        Female,
-        Other
+        Male = 01,
+        Female= 02,
+        Other = 03
     }
 }
