@@ -23,8 +23,9 @@ namespace Utility.Service.Implementation
                 new Claim(JwtRegisteredClaimNames.Sub, _configuration["JWT:Subject"]),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                new Claim(ClaimTypes.Email, login.EmailAddress),
+                new Claim(ClaimTypes.Email, login.OfficialEmailAddress),
                 new Claim(ClaimTypes.MobilePhone, login.PhoneNumber),
+                new Claim(ClaimTypes.Role, login.Role),
             };
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));
             var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);

@@ -2,8 +2,9 @@
 {
     public class TokenDTO
     {
-        public long UserId { get; set; }
-        public string EmailAddress { get; set; }
+        public string EmployeeCode { get; set; }
+        public string OfficialEmailAddress { get; set; }
         public string PhoneNumber { get; set; }
+        public string Role { get; set; }
     }
 }
