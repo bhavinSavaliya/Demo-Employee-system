@@ -3,6 +3,7 @@ using System;
 using DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230824054358_UpdateEMployee")]
+    partial class UpdateEMployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,35 +28,30 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("Entity.DataModals.Employee", b =>
                 {
                     b.Property<long>("EmployeeId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("EmployeeId"));
-
                     b.Property<string>("CurrentAddress")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("DateOfBirth")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime?>("DateOfJoin")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Designation")
-                        .HasColumnType("text");
-
-                    b.Property<string>("EmployeeCode")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<double?>("Experience")
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DateOfJoin")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Designation")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<double>("Experience")
                         .HasColumnType("double precision");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("Gender")
+                    b.Property<int>("Gender")
                         .HasColumnType("integer");
 
                     b.Property<string>("LastName")
@@ -69,18 +67,23 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("PermentAddress")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PersonalEmailAddress")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("ROEmailAddress")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("ReportTo")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Role")
