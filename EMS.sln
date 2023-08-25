@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{FEEB82A8-0258-4B3A-B718-FFE8EC2F3989}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{92F5CCB0-247E-4E8E-B88A-2FABCE26693C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility", "Utility\Utility.csproj", "{92F5CCB0-247E-4E8E-B88A-2FABCE26693C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEMS", "TestEMS\TestEMS.csproj", "{BB58AF55-4FFB-4A5D-8A74-839755416730}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{92F5CCB0-247E-4E8E-B88A-2FABCE26693C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92F5CCB0-247E-4E8E-B88A-2FABCE26693C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92F5CCB0-247E-4E8E-B88A-2FABCE26693C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB58AF55-4FFB-4A5D-8A74-839755416730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB58AF55-4FFB-4A5D-8A74-839755416730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB58AF55-4FFB-4A5D-8A74-839755416730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB58AF55-4FFB-4A5D-8A74-839755416730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

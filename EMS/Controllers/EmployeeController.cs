@@ -25,8 +25,18 @@ namespace EMS.Controllers
         [HttpPut("update")]
         public async Task<IActionResult> Update(EmployeeUpdateDTO dto)
         {
-            return await _service.Update(dto);
-            
+            return await _service.Update(dto);    
+        }
+        [HttpGet("GetById")]
+        public async Task<IActionResult> GetById(long EmployeeId) {
+            var result = await _service.GetByIdAsync(EmployeeId);
+            return SuccessResponseHelper<Employee>.GetSuccessResponse(StatusCodes.Status200OK, "Success", result);
+        }
+
+        [HttpDelete("delete")]
+        public Task<IActionResult> Delete(long EmployeeId)
+        {
+            return _service.Delete(EmployeeId);
         }
     }
 }

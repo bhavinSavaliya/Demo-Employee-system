@@ -28,6 +28,7 @@ namespace EMS.ServiceDependancy
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<ITokenGenerationService, TokenGenerationService>();
             services.AddScoped<ISendMailService, SendMailService>();
+            services.AddScoped<ISalaryCalculationService, SalaryCalculationService>();
             return services;
         }
     }

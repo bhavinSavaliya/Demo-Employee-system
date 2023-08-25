@@ -19,13 +19,22 @@ namespace Service.Implementation
             _mapper = mapper;
         }
 
+        public async Task<IActionResult> Delete(long employeeId)
+        {
+            var employee = await _unitOfWork.EmployeeRepo.GetAsync(x => x.EmployeeId == employeeId);
+            if (employee != null) {
+                _unitOfWork.EmployeeRepo.Remove(employee);
+                return SuccessResponseHelper<string>.GetSuccessResponse(StatusCodes.Status200OK, "Deleted Successfully");
+            }
+            return SuccessResponseHelper<string>.GetSuccessResponse(StatusCodes.Status200OK, "Not Found");
+        }
+
         public async Task<IActionResult> Update(EmployeeUpdateDTO dto)
         {
-            var employee = await _unitOfWork.EmployeeRepo.GetAsync(x => x.OfficialEmailAddress == dto.OfficialEmailAddress);
-            if (employee != null)
+            if (_unitOfWork.EmployeeRepo.IsEnityExist(x => x.EmployeeId == dto.EmployeeId))
             {
                 var emp = _mapper.Map<Employee>(dto);
-                emp.DateOfBirth =dto.DateOfBirth.ToUniversalTime();
+                emp.DateOfBirth = dto.DateOfBirth.ToUniversalTime();
                 emp.DateOfJoin = dto.DateOfJoin.ToUniversalTime();
                 _unitOfWork.EmployeeRepo.Update(emp);
                 return SuccessResponseHelper<string>.GetSuccessResponse(StatusCodes.Status200OK, "Updated Successfully");
