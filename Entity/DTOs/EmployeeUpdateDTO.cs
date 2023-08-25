@@ -6,6 +6,10 @@ namespace Entity.DTOs
     public class EmployeeUpdateDTO
     {
         [Required]
+        public long EmployeeId { get; set; }
+        [Required]
+        public string EmployeeCode { get; set; } = null!;
+        [Required]
         public string FirstName { get; set; } = null!;
         [Required]
         public string LastName { get; set; } = null!;
@@ -34,6 +38,8 @@ namespace Entity.DTOs
         public string ROEmailAddress { get; set; } = null!;
         [Required]
         public Role Role { get; set; }
+        [Required]
+        public string Password { get; set; } = null!;
         public Status? Status { get; set; } = Enum.Status.Inactive;
     }
 }

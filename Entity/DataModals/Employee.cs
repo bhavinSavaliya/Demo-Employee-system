@@ -24,7 +24,7 @@ namespace Entity.DataModals
         public string? ReportTo { get; set; }
         public string? ROEmailAddress { get; set; }
         public Role Role { get; set; }
-        public string Password { get; set; } = null!;
+        public string Password { get; set; }
         public DateTime? CreatedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }
         public Status? Status { get; set; } = Enum.Status.Inactive;
